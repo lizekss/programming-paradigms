@@ -1,33 +1,30 @@
-## დავალების ატვირთვა
-დავალება უნდა ატვირთოთ თქვენს პერსონალურ Github Classroom-ის რეპოზიტორიაში.
-
-## საჭირო პაკეტები
-დაგჭირდებათ libcurl პაკეტის დაყენება
+## Required packages
+You will need to install libcurl
 ```sh
 sudo apt-get install libcurl4-gnutls-dev # 64bit
 sudo apt-get install libcurl4-gnutls-dev:i386 # 32bit
 ```
 
-## კომპილაცია
+## Compile
 ```sh
 make
 ```
 
-## ტესტებისთვის საჭირო data ფაილები
-`make` ის პირველი გაშვება ავტომატურად შექმნის data დირექტორიას ტესტებისთვის საჭირო ფაილებით.  
-თუ რატომღაც ეს ფაილები "დაგიზიანდათ", მათი თავიდან ჩამოტვირთვისთვის გაუშვით:
+## Data files required for testing
+Running `make` for the first time automatically creates the `data` directory with required test files.
+If necessary, the files can be re-donwloaded the following way:
 ```sh
 rm -rf data/
 make data
 ```
 
-## ტესტირება
+## Testing
 ```sh
 ./assn-4-checker ./rss-news-search
 ./assn-4-checker ./rss-news-search -m
 ```
 
-## ჰეშირების ფუნქცია
+## Hash function
 For those of you in need of a hash function for strings,
 you can use the following, which is lifted from a textbook
 we used to use in CS106A.  You'll need to modify it so that
