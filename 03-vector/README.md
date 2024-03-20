@@ -1,26 +1,27 @@
 ## დავალების ატვირთვა
 დავალება უნდა ატვირთოთ თქვენს პერსონალურ Github Classroom-ის რეპოზიტორიაში.
-
-## კომპილაცია
+## Compile
 ```sh
 make
 ```
 
-## ტესტებისთვის საჭირო data ფაილები
-`make` ის პირველი გაშვება ავტომატურად შექმნის data დირექტორიას ტესტებისთვის საჭირო ფაილებით.  
-თუ რატომღაც ეს ფაილები "დაგიზიანდათ", მათი თავიდან ჩამოტვირთვისთვის გაუშვით:
+## Data files required for testing
+Running `make` for the first time automatically creates the `data` directory with required test files.
+If necessary, the files can be re-donwloaded the following way:
 ```sh
 rm -rf data/
 make data
 ```
 
-## ტესტირება
+## Testing
 ```sh
 ./vector-test
 ./hashset-test
 ```
 
-`vector-test` და `hashset-test` აპლიკაციებს ეკრანზე გამოაქვს თუ როგორ იქცევა თქვენი ვექტორის და ჰეშსეტის იმპლემენტაცია. რომელიც შეგიძლიათ შეადაროთ `sample-output-vector.txt` და `sample-output-hashset.txt` ფაილებს რათა დარწმუნდეთ თქვენი იმპლემენტაციის სისწორეში.
+`vector-test` and `hashset-test` applications output how your vector and hashset implementations behave,
+which can be compared to `sample-output-vector.txt` და `sample-output-hashset.txt` files to ensure correctness of your implementation.
+
 ```sh
 ./vector-test | diff sample-output-vector.txt -
 ./hashset-test | diff sample-output-hashset.txt -
