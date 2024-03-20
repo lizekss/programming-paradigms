@@ -1,28 +1,24 @@
-## დავალების ატვირთვა
-დავალება უნდა ატვირთოთ თქვენს პერსონალურ Github Classroom-ის რეპოზიტორიაში.
-
-## კომპილაცია
-
+## Compile
 ```sh
 make
 ```
 
-## ტესტირება
-ჯამში ნამუშევარია მოწმდება 7 ტესტზე (t1-იდან t7-ის ჩათვლით).  
-თითოეული ტესტის გაშვებისას -w პარამეტრის დაყენებით შეგიძლიათ აკონტროლოთ თუ რამდენ ნაკადიან გარემოში შემოწმდება ნამუშევარი.  
-მაგალითად პირველი ტესტის ოთხ ნაკადიან გარემოში გასაშვებად უნდა გამოიყენოთ:
+## Testing
+The code is tested with a total of 7 tests (t1 through t7).
+When running each test, the `-w` tag can be used to control how many threads are used in the testing.
+For example, to run the first test with an environment of 4 threads, use:
 ```sh
 ./bankdriver -t1 -w4
 ```
--b პარამეტრის გამოყენებით შეგიძლიათ ჩართოთ ბალანსების შემოწმების ფუნქციონალი:
+Use the `-b` tag to turn on balance checking:
 ```sh
 ./bankdriver -t7 -w4 -b
 ```
--y პარამეტრის დაყენებით შეგიძლიათ აკონტროლოთ თუ რა ალბათობით გაითიშნონ ნაკადები, მაგალითად -y50 ნიშნავს 50%-იან შანსს:
+Use the `-y` tag to control the probability with which the threads die, e.g. `-y50` means a 50% chance:
 ```sh
 ./bankdriver -t3 -w2 -y50
 ```
-valgrind --tool=helgrind ის გამოყენებით შეგიძლიათ შეამოწმოთ თქვენი ნამუშევარი race-condition და სხვა ნაკადებთან დაკავშირებულ პრობლემებზე:
+You can use `valgrind --tool=helgrind` to check your work for race conditions and other concurrency related issues
 ```sh
 valgrind --tool=helgrind ./bankdriver -r -t2 -w4
 ```
